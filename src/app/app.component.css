@@ -1,0 +1,16 @@
+#aboutSectionTitle {
+    font-size: 4rem;
+}
+#aboutSection{
+    /*text-align: center;*/
+    height:200px;
+    margin-bottom: 200px;
+}
+#backgroundImage{
+    width:350px;
+    height:200px;
+}
+#info{
+    margin-top:2rem;
+    font-size:16px;
+}

@@ -1,1 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    font-size: 10px;
+}
+
+body {
+    margin: 10px;
+    background-color: rgb(77, 235, 124);
+    padding: 15px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 2rem;
+    background-image: url('https://cdn.discordapp.com/attachments/779360461513818162/964240546430341130/shutterstock_737651131.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+#aboutSectionTitle {
+    font-size: 4rem;
+}
+#aboutSection{
+    /*text-align: center;*/
+    height:200px;
+    margin-bottom: 200px;
+}
+#backgroundImage{
+    width:350px;
+    height:200px;
+}
+#info{
+    margin-top:2rem;
+    font-size:16px;
+}

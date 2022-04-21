@@ -1,0 +1,11 @@
+<select name="cards" id="cards">
+    <option value="{{card}}" *ngFor="let card of centre.employees.toArray()">{{card.toString()}}</option>
+</select>
+
+<select name="zones" id="zones">
+    <option value="{{zone}}" *ngFor="let zone of centre.zones.toArray()">{{zone.name}}</option>
+</select>
+
+<input type="submit" value="Submit" onclick="{{moveCard(102)}}">
+
+<cards></cards>
