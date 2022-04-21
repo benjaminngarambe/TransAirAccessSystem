@@ -3,7 +3,7 @@ import { Card, Role } from "../Card/Card";
 
 abstract class Zone{
     readonly name: string;
-    capacity: number;
+    capacity: number = 0;
     allowedRoles: Array<Role> = [];
     readonly employees: List<Card> = new List<Card>();
     readonly adjacentZones: List<Zone> = new List<Zone>();

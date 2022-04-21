@@ -1,11 +1,20 @@
-<select name="cards" id="cards">
-    <option value="{{card}}" *ngFor="let card of centre.employees.toArray()">{{card.toString()}}</option>
-</select>
-
-<select name="zones" id="zones">
-    <option value="{{zone}}" *ngFor="let zone of centre.zones.toArray()">{{zone.name}}</option>
-</select>
-
-<input type="submit" value="Submit" onclick="">
-
+<div id="upperSection">
+    <div id="moveCardSection">
+        <select id="cardSelect" (change)="ngOnInit">
+            <option value="{{card.id}}" *ngFor="let card of cards">{{card.toString()}}</option>
+        </select>
+        <select id="zoneSelect" (change)="ngOnInit">
+            <option value="{{zone.name}}" *ngFor="let zone of zones">{{zone.name}}</option>
+        </select>
+        <input id="moveButton" type="submit" value="Move" (click)="moveCard()"/>
+        <div id="detailedInfoSection">
+            <p id="cardRole">{{getCardRole()}}</p>
+            <p id="cardLocation">{{getCardLocation()}}</p>
+            <p id="zoneCapacity">{{getZoneCapacity()}}</p>
+        </div>
+    </div>
+    <div id="loggerSection">
+        <logger [newLog]="newLog"></logger>
+    </div>
+</div>
 <cards></cards>

@@ -1,19 +1,24 @@
 #ulCards {
     list-style-type: none;
     line-height: 3.5rem;
+    padding: 0;
 }
 #cardsSection {
     margin: 15px 0;
-    margin-top:60px;
+    margin-top:20px;
     display: flex;
     justify-content: space-between;
     background-color:rgba(120,120,120,0.3);
     border-style: solid;
     border-width: 2px;
-    padding-left: 20%;
-    padding-right: 20%;
+    border-radius: 10px;
+    padding-left: 1%;
+    padding-right: 1%;
 }
 
 #cardTitle {
-    font-size: 2.5rem;
+    font-size: 3rem;
+    margin-top:20px;
+    text-align: center;
+    font-weight: bold;
 }

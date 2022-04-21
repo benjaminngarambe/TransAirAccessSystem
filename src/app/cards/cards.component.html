@@ -1,8 +1,10 @@
 <div id = "cardsSection">
-    <div>
-        <div id = "cardTitle">EMPLOYEES:</div>
-        <ul id="ulCards">
-            <li *ngFor="let c of cards">{{c.toString()}}</li>
-        </ul>
-    </div>
+    <ng-container *ngFor="let r of roles">
+        <div>
+            <div id = "cardTitle">{{r}}</div>
+            <ul id="ulCards">
+                <li *ngFor="let c of getFilteredCards(r.toString())">{{c.toString()}}</li>
+            </ul>
+        </div>
+    </ng-container>
 </div>

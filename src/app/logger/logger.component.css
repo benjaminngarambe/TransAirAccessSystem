@@ -1,0 +1,7 @@
+#logger{
+    border-radius: 10px;
+    resize: none;
+    margin-left: auto; 
+    display: flex; 
+    justify-content: flex-end;
+}

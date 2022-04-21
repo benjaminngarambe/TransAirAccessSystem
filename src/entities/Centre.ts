@@ -67,14 +67,15 @@ class Centre{
         this.employees.remove(this.employees.first(a=> a.id == id));
     }
 
-    moveCard(card:Card, destination:Zone): void{
+    moveCard(card:Card, destination:Zone): string{
+        let pathLog: string = "";
         if(!this.zones.contains(destination)){
-            console.log(`${destination.name} zone does not exists in ${this.name} Centre`);
-            return;
+            pathLog = `${destination.name} zone does not exists in ${this.name} Centre`;
+            return pathLog;
         }
         if(!this.employees.contains(card)){
-            console.log(`${card.toString} is not employee of ${this.name} Centre`);
-            return;
+            pathLog = `${card.toString} is not employee of ${this.name} Centre`;
+            return pathLog;
         }
 
         //BFS shortest path algorithm
@@ -86,21 +87,29 @@ class Centre{
         for(let zone of path){
             if(zone == startZone) { continue; }
             if(!zone.hasSpace()){
-                console.log(`There is no free space in ${zone.name} zone. ${card.toString()} is left in ${prevZone.name}`);
-                return;
-            }else if(!zone.allowedRoles.includes(card.role)){
-                console.log(`${card.toString()} is not allowed to be in ${zone.name} zone. ${card.toString()} is left in ${prevZone.name} zone`);
-                return;
-            }else if(card.role == Role.Janitor &&       //specific requirement from documentation
-                    !zone.employees.any(a => a.role != Role.Janitor)){
-                console.log(`No employee who is not a Janitor is present in the ${zone.name} zone. ${card.toString()} is left in ${prevZone.name} zone`);
-                return;
+                pathLog += `There is no free space in ${zone.name} zone.`
+                pathLog += `${card.toString()} is left in ${prevZone.name}.\n`;
+                return pathLog;
+            }
+            if(!zone.allowedRoles.includes(card.role)){
+                pathLog += `${card.toString()} is not allowed to be in ${zone.name} zone.\n`
+                pathLog += `${card.toString()} is left in ${prevZone.name} zone.\n`;
+                return pathLog;
+            }
+            console.log(zone.employees.any(a => a.role != Role.Janitor));
+            if(card.role == Role.Janitor &&       //specific requirement from documentation
+                !zone.employees.any(a => a.role != Role.Janitor)){
+                pathLog += `No employee who is not a Janitor is present in the ${zone.name} zone.\n`;
+                pathLog += `${card.toString()} is left in ${prevZone.name} zone.\n`;
+                return pathLog;
             }
             this.zones.forEach(a => a.removeEmployee(card));
             this.zones.first(a => a == zone).addEmployee(card);
-            console.log(`${card.toString()} is moved from ${prevZone.name} to ${zone.name}`);
+            pathLog += `${card.toString()} is moved from ${prevZone.name} to ${zone.name}.\n`;
             prevZone = zone;
         }
+
+        return pathLog;
     }
 
     moveCardById(cardId:number, zone:Zone): void{
