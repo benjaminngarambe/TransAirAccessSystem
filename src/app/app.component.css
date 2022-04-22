@@ -2,15 +2,20 @@
     font-size: 4rem;
 }
 #aboutSection{
-    /*text-align: center;*/
     height:200px;
-    margin-bottom: 150px;
+    margin-bottom: 15%;
+    display: flex;
 }
-#backgroundImage{
+#logo{
     width:350px;
     height:200px;
 }
 #info{
     margin-top:2rem;
     font-size:16px;
+}
+
+#map{
+    margin-right: 25%;
+    margin-left: auto;
 }

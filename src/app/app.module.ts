@@ -8,11 +8,14 @@ import { AppComponent } from './app.component';
 import { CardsComponent } from './cards/cards.component';
 import { CentreComponent } from './centre/centre.component';
 import { LoggerComponent } from './logger/logger.component';
+import { ZonesComponent } from './zones/zones.component';
+import { ZonesService } from './zones/service/zones.service';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardsComponent,
+    ZonesComponent,
     CentreComponent,
     LoggerComponent
   ],
@@ -22,6 +25,7 @@ import { LoggerComponent } from './logger/logger.component';
   ],
   providers: [
     CardService,
+    ZonesService,
     CentreService
   ],
   bootstrap: [AppComponent]

@@ -1,0 +1,10 @@
+<div id = "zonesSection">
+    <ng-container *ngFor="let z of zones">
+        <div>
+            <div id = "zoneTitle">{{z.name}}</div>
+            <ul id="ulZones">
+                <li *ngFor="let c of z.employees.toArray()">{{c.toString()}}</li>
+            </ul>
+        </div>
+    </ng-container>
+</div>

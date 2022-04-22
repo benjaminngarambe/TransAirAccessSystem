@@ -10,6 +10,7 @@
 }
 
 #moveCardSection, #loggerSection {
+    display:flex;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -17,8 +18,4 @@
 #cardSelect, #zoneSelect, #moveButton, #cardRole, #cardLocation, #zoneCapacity{
     margin-right: 20px;
     font-size: 2rem;
-}
-
-#detailedInfoSection{
-    /* display: flex; */
 }

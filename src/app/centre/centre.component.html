@@ -1,16 +1,20 @@
 <div id="upperSection">
     <div id="moveCardSection">
-        <select id="cardSelect" (change)="ngOnInit">
-            <option value="{{card.id}}" *ngFor="let card of cards">{{card.toString()}}</option>
-        </select>
-        <select id="zoneSelect" (change)="ngOnInit">
-            <option value="{{zone.name}}" *ngFor="let zone of zones">{{zone.name}}</option>
-        </select>
-        <input id="moveButton" type="submit" value="Move" (click)="moveCard()"/>
-        <div id="detailedInfoSection">
+        <div id="cardSelectSection">
+            <select id="cardSelect" (change)="ngOnInit">
+                <option value="{{card.id}}" *ngFor="let card of cards">{{card.toString()}}</option>
+            </select>
             <p id="cardRole">{{getCardRole()}}</p>
             <p id="cardLocation">{{getCardLocation()}}</p>
+        </div>
+        <div id="zoneSelectSection">
+            <select id="zoneSelect" (change)="ngOnInit">
+                <option value="{{zone.name}}" *ngFor="let zone of zones">{{zone.name}}</option>
+            </select>
             <p id="zoneCapacity">{{getZoneCapacity()}}</p>
+        </div>
+        <div>
+            <input id="moveButton" type="submit" value="Move" (click)="moveCard()"/>
         </div>
     </div>
     <div id="loggerSection">
@@ -18,3 +22,4 @@
     </div>
 </div>
 <cards></cards>
+<zones></zones>

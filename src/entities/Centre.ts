@@ -87,7 +87,7 @@ class Centre{
         for(let zone of path){
             if(zone == startZone) { continue; }
             if(!zone.hasSpace()){
-                pathLog += `There is no free space in ${zone.name} zone.`
+                pathLog += `There is no free space in ${zone.name} zone.\n`
                 pathLog += `${card.toString()} is left in ${prevZone.name}.\n`;
                 return pathLog;
             }
